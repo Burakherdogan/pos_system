@@ -6,6 +6,4 @@ class Products(models.Model):
     category = models.CharField(max_length=50, null=True)
     image = models.FileField(upload_to="images", blank=True)
     
-    def __str__(self):
-        return f"{self.name} {self.price}"
     
