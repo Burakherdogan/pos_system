@@ -12,19 +12,16 @@
             <div class="col-2">
                 Just Logo
             </div>
-            {% comment %} Report Button {% endcomment %}
-            <div class="col-1">
+            <div class="col-3">
+                {% comment %} Report Button {% endcomment %}
                 <a role="button" href="/reports" class="btn btn-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
                         <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
                     </svg>
                     Reports
                 </a>
-            </div>
-            {% comment %} Report end {% endcomment %}
-
-            {% comment %} Products Button {% endcomment %}
-            <div class="col-1">
+                {% comment %} Report end {% endcomment %}
+                {% comment %} Products Button {% endcomment %}
                 <a role="button" href="/" class="btn btn-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5"/>
@@ -32,17 +29,19 @@
                     </svg>
                     Products
                 </a>
+                {% comment %} Products end {% endcomment %}
             </div>
-            {% comment %} Products end {% endcomment %}
+            <div class="col-3">
+            </div>
 
-            <div class="col-7">
+            <div class="col-4 border-left border-start border-black">
                 <h1>Shopping Cart</h1>
             </div>
         </div>
     </div>
-    {% include 'shopping_cart.html'%}
     {% block content %}
     {% endblock %}
+    {% include 'shopping_cart.html'%}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 

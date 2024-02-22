@@ -2,13 +2,27 @@
 
 {% block content %}
 
-{% for product in products %}
-<div class="card p" style="width: 18rem;">
-    <img src="{{ product.image.url }}" alt="">
-    <h5 class="card-title ">{{product.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{product.price}}</h6>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-8 border-start border-end">
+        {% for product in products %}
+          <div class="card p" style="width: 13rem;">
+            <img src="{{ product.image.url }}" alt="">
+            <h5 class="card-title ">{{product.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{product.price}}</h6>
+          </div>
+        {% endfor %} 
+      </div>
+    </div>
+    <div class="col-3">
+    </div>
+    <div class="col-3">
+    </div>
+    </div>
   </div>
 </div>
-{% endfor %}
+
+
 
 {% endblock %}
