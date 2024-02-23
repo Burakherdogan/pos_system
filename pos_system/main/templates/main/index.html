@@ -1,7 +1,9 @@
 {% extends "navbar.html" %}
 
 {% block content %}
-
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
 
 <div class="container text-center">
   <div class="row">
@@ -11,6 +13,7 @@
             <img src="{{ product.image.url }}" alt="">
             <h5 class="card-title ">{{product.name}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{product.price}}</h6>
+            <button type="button" value="{{ product.id }}" id="add-cart" class="btn btn-secondary">Add to cart</button>
           </div>
         {% endfor %} 
       </div>
@@ -23,6 +26,31 @@
   </div>
 </div>
 
+<script>
+$(document).on('click', '#add-cart', function(e){
+  e.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url: '{% url 'cart_add' %}',
+    data: {
+      product_id: $('#add-cart').val(),
+      csrfmiddlewaretoken: '{{ csrf_token }}',
+      action: 'post'
+    },
 
+    succes: function(json){
+      console.log(json)
+      document.getElementById("cart_quantity").textContent = json.qty
+    },
+
+    error: function(xhr, errmsg, err){
+
+    }
+
+  });
+
+
+})
+</script>
 
 {% endblock %}
